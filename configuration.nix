@@ -155,30 +155,48 @@ in
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+
+# Terminal Apps
 alacritty
 vim
 neovim
 fzf
 git
-jdk20
-maven
 ranger
 tmux
-libsForQt5.okular
 htop
 surfraw
+xclip
+wget
+jq
+yt-dlp
+zip
+unzip
+
+# Fonts
 dejavu_fonts
+
+# LaTeX
 texliveFull
 texmaker
+
+# IDE
 vscode
-sublime4
-xclip
 eclipses.eclipse-java
 jetbrains.idea-community
-chromedriver
-mpv
+jdk20
+maven
+
+# Browsers
 brave
 google-chrome
+chromedriver
+
+# General GUI Apps
+libsForQt5.okular
+sublime4
+sioyek
+mpv
 mupdf
 postman
 bitwarden-desktop
@@ -186,12 +204,7 @@ espanso
 zoom-us
 github-desktop
 libreoffice-qt6-still
-wget
-jq
-yt-dlp
 freetube
-zip
-unzip
 emacs
 gnome.gnome-keyring
 obsidian
@@ -212,7 +225,6 @@ xfce.thunar-archive-plugin
 numix-gtk-theme
 xfce.xfce4-volumed-pulse
 xfce.xfce4-pulseaudio-plugin
-
 
 ];
 
