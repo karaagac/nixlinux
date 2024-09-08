@@ -178,6 +178,7 @@ jq
 yt-dlp
 zip
 unzip
+stow
 
 # Fonts
 dejavu_fonts
@@ -271,6 +272,28 @@ programs = {
    };
 };
 
+# ===============Espanso systemd config=========
+
+  # make sure to: espanso service register
+
+  systemd.services.espanso = {
+    description = "Espanso Text Expander";
+    after = [ "network.target" ];
+
+    serviceConfig = {
+      ExecStart = "/run/current-system/sw/bin/espanso start";
+      Restart = "on-failure";
+      User = "xalil";
+      Environment = "HOME=/home/xalil";
+
+    };
+
+    wantedBy = [ "default.target" ];
+  };
+
+
+
+#===============================================
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
