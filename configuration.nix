@@ -220,11 +220,20 @@ plata-theme
 arc-icon-theme
 gnome.file-roller
 xfce.thunar
-xfce.xfce4-whiskermenu-plugin
+xfce.thunar-volman
 xfce.thunar-archive-plugin
+xfce.xfce4-whiskermenu-plugin
 numix-gtk-theme
 xfce.xfce4-volumed-pulse
 xfce.xfce4-pulseaudio-plugin
+xarchiver
+
+# Kde
+kdePackages.ark #File archiver
+
+# Gnome
+gnome.file-roller #Gnome Archive Manager
+
 
 ];
 
