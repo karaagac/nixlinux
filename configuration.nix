@@ -214,6 +214,7 @@ github-desktop
 libreoffice-qt6-still
 freetube
 emacs
+sbcl # emacs lisp compiler. Without this ripgrep doesnt work in emacs
 gnome.gnome-keyring
 obsidian
 
