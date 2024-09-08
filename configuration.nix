@@ -171,7 +171,7 @@ freetube
 zip
 unzip
 emacs
-
+obsidian
 gnome.gnome-keyring
 
 # Postgresql
