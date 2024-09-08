@@ -4,6 +4,27 @@
 
 { config, pkgs, ... }:
 
+#========got chromedriver=================
+
+let
+  # Define the channel you want
+  chromeChannel = "stable";  # Adjust as needed (stable, beta, dev)
+
+  # Define a function to get the correct Chrome package
+  getChromePackage = channel: pkgs."google-chrome-${channel}";
+
+  # Get the correct package for the selected channel
+  chromePkg = getChromePackage chromeChannel;
+
+  # Define the wrapper script
+  chromeWrapper = pkgs.writeShellScriptBin "google-chrome" ''
+    #!/bin/sh
+    exec ${chromePkg}/bin/google-chrome-stable "$@"
+  '';
+in
+
+#=========================================
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -154,6 +175,7 @@ sublime4
 xclip
 eclipses.eclipse-java
 jetbrains.idea-community
+chromedriver
 mpv
 brave
 google-chrome
@@ -171,8 +193,8 @@ freetube
 zip
 unzip
 emacs
-obsidian
 gnome.gnome-keyring
+obsidian
 
 # Postgresql
 postgresql
@@ -190,7 +212,9 @@ xfce.thunar-archive-plugin
 numix-gtk-theme
 xfce.xfce4-volumed-pulse
 xfce.xfce4-pulseaudio-plugin
-  ];
+
+
+];
 
 
 # non nix binary
@@ -218,8 +242,6 @@ programs = {
       };
    };
 };
-
-
 
 
   # Some programs need SUID wrappers, can be configured further or are
