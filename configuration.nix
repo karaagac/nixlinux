@@ -180,6 +180,7 @@ dbeaver-bin
 mysql-workbench
 
 #XFCE Related
+leafpad
 plata-theme
 arc-icon-theme
 gnome.file-roller
