@@ -167,6 +167,7 @@ alacritty
 vim
 neovim
 fzf
+ripgrep
 git
 ranger
 tmux
