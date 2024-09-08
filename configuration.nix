@@ -244,6 +244,7 @@ gnome.file-roller #Gnome Archive Manager
 ];
 
 
+
 # non nix binary
 programs.nix-ld.enable = true;
 
