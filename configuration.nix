@@ -187,7 +187,8 @@ xfce.thunar
 xfce.xfce4-whiskermenu-plugin
 xfce.thunar-archive-plugin
 numix-gtk-theme
-
+xfce.xfce4-volumed-pulse
+xfce.xfce4-pulseaudio-plugin
   ];
 
 
