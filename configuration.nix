@@ -163,6 +163,7 @@ bluez-tools
 blueman
 
 # Terminal Apps
+oh-my-zsh
 alacritty
 vim
 neovim
