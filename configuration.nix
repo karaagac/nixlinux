@@ -255,24 +255,38 @@ programs.nix-ld.enable = true;
 users.defaultUserShell=pkgs.zsh; 
 
 # enable zsh and oh my zsh
-programs = {
-   zsh = {
+programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    zsh-autoenv.enable = true;
+    syntaxHighlighting.enable = true;
+    ohMyZsh = {
       enable = true;
-      autosuggestions.enable = true;
-      zsh-autoenv.enable = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh = {
-         enable = true;
-         theme = "robbyrussell";
-         plugins = [
-           "git"
-	   "fzf"
-	   "ripgrep"
-           "history"
-         ];
-      };
-   };
+      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "fzf"
+        "ripgrep"
+        "history"
+      ];
+    };
+  };
+
+# zsh aliases
+programs.zsh.shellAliases = {
+    h = "cd ~";
+    d = "cd ~/Desktop";
+    p="cd ~/Pictures/";
+    dn="cd ~/Downloads/";
+    doc="cd ~/Documents/";
+    dot="cd /home/xalil/dotfiles";
+
+    # copy/paste for linux machines (Mac style)
+    pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
+    pbpaste="xclip -selection clipboard -o";	# paste from clipboard, ctrl+v, ctrl+shift+v
+    pbselect="xclip -selection primary -o";	# paste from highlight, middle click, shift+insert
 };
+
 
 # ===============Espanso systemd config=========
 
