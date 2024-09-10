@@ -222,19 +222,23 @@ postgresql
 dbeaver-bin
 mysql-workbench
 
-#XFCE Related
+# XFCE Related==============
 leafpad
+xarchiver
+
+## XFCE Themes
 plata-theme
-arc-icon-theme
-gnome.file-roller
-xfce.thunar
-xfce.thunar-volman
-xfce.thunar-archive-plugin
-xfce.xfce4-whiskermenu-plugin
 numix-gtk-theme
+arc-icon-theme
+
+## XFCE Thunar
+xfce.thunar
+xfce.thunar-volman 
+xfce.thunar-archive-plugin 
+xfce.xfce4-whiskermenu-plugin
 xfce.xfce4-volumed-pulse
 xfce.xfce4-pulseaudio-plugin
-xarchiver
+# ============================
 
 # Kde
 kdePackages.ark #File archiver
@@ -254,6 +258,7 @@ dejavu_fonts
 noto-fonts
 nerdfonts
 ];
+
 
 # non nix binary
 programs.nix-ld.enable = true;
