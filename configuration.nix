@@ -182,8 +182,6 @@ zip
 unzip
 stow
 
-# Fonts
-dejavu_fonts
 
 # LaTeX
 texliveFull
@@ -243,11 +241,19 @@ kdePackages.ark #File archiver
 
 # Gnome
 gnome.file-roller #Gnome Archive Manager
+gnome.gnome-disk-utility
 
+# Android
+android-file-transfer
 
 ];
 
-
+# Fonts
+fonts.packages = with pkgs; [
+dejavu_fonts
+noto-fonts
+nerdfonts
+];
 
 # non nix binary
 programs.nix-ld.enable = true;
@@ -280,6 +286,7 @@ programs.zsh.shellAliases = {
     p="cd ~/Pictures/";
     dn="cd ~/Downloads/";
     doc="cd ~/Documents/";
+    notlar="cd ~/Documents/notlar";
     dot="cd /home/xalil/dotfiles";
 
     # copy/paste for linux machines (Mac style)
@@ -311,6 +318,10 @@ programs.zsh.shellAliases = {
 
 
 #===============================================
+
+  # GVFS - Enable usb drive to appear automatically in file manager
+  services.gvfs.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
