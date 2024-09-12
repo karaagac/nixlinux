@@ -164,6 +164,7 @@ blueman
 
 # Terminal Apps
 oh-my-zsh
+zsh-powerlevel10k
 alacritty
 vim
 neovim
@@ -216,6 +217,7 @@ emacs
 sbcl # emacs lisp compiler. Without this ripgrep doesnt work in emacs
 gnome.gnome-keyring
 obsidian
+pavucontrol
 
 # Postgresql
 postgresql
@@ -257,8 +259,21 @@ fonts.packages = with pkgs; [
 dejavu_fonts
 noto-fonts
 nerdfonts
+jetbrains-mono
 ];
 
+#==========Default Apps===========
+xdg.mime.defaultApplications = {
+    "application/pdf" = "okular.desktop";
+    "video/mpeg" = "mpv.desktop";    # For .mpg and .mpeg files
+    "video/mp4" = "mpv.desktop";     # For .mp4 files
+    "video/x-matroska" = "mpv.desktop"; # For .mkv files
+    "audio/mpeg" = "mpv.desktop";    # For .mp3 files
+    "video/quicktime" = "mpv.desktop"; # For .mov files
+};
+
+
+#=================================
 
 # non nix binary
 programs.nix-ld.enable = true;
@@ -283,6 +298,9 @@ programs.zsh = {
       ];
     };
   };
+
+# source powerlevel10k
+programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
 # zsh aliases
 programs.zsh.shellAliases = {
