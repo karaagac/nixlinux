@@ -182,7 +182,7 @@ yt-dlp
 zip
 unzip
 stow
-
+translate-shell
 
 # LaTeX
 texliveFull
@@ -316,6 +316,10 @@ programs.zsh.shellAliases = {
     # nix related
     nix-conf="sudo nvim /etc/nixos/configuration.nix";
     nix-switch ="sudo nixos-rebuild switch";
+
+    # Google Translate Online
+    entr="trans en:tr"; #English to Turkish
+    tren="trans tr:en"; #Turkish to English
 
     # copy/paste for linux machines (Mac style)
     pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
