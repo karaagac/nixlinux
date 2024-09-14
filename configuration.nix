@@ -298,7 +298,7 @@ programs.zsh = {
         "history"
       ];
     };
-  };
+};
 
 # source powerlevel10k
 programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
@@ -312,6 +312,9 @@ programs.zsh.shellAliases = {
     doc="cd ~/Documents/";
     notlar="cd ~/Documents/notlar";
     dot="cd /home/xalil/dotfiles";
+
+    # Config Files
+    bookmarks="vim /home/xalil/dotfiles/surfraw/.config/surfraw/bookmarks";
 
     # nix related
     nix-conf="sudo nvim /etc/nixos/configuration.nix";
