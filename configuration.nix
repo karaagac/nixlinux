@@ -183,6 +183,7 @@ zip
 unzip
 stow
 translate-shell
+gnumake
 
 # LaTeX
 texliveFull
@@ -219,6 +220,8 @@ sbcl # emacs lisp compiler. Without this ripgrep doesnt work in emacs
 gnome.gnome-keyring
 obsidian
 pavucontrol
+shutter # image editor
+obs-studio
 
 # Postgresql
 postgresql
