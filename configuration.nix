@@ -222,6 +222,7 @@ obsidian
 pavucontrol
 shutter # image editor
 obs-studio
+localsend # send/get files to/from another devices
 
 # Postgresql
 postgresql
