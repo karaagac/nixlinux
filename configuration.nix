@@ -201,6 +201,7 @@ google-chrome
 chromedriver
 
 # General GUI Apps
+audio-recorder
 libsForQt5.okular
 sublime4
 sioyek
@@ -311,6 +312,10 @@ programs.zsh.shellAliases = {
     doc="cd ~/Documents/";
     notlar="cd ~/Documents/notlar";
     dot="cd /home/xalil/dotfiles";
+
+    # nix related
+    nix-conf="sudo nvim /etc/nixos/configuration.nix";
+    nix-switch ="sudo nixos-rebuild switch";
 
     # copy/paste for linux machines (Mac style)
     pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
