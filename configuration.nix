@@ -189,6 +189,7 @@ unzip
 stow
 translate-shell
 gnumake
+bc
 
 # LaTeX
 texliveFull
@@ -228,6 +229,8 @@ pavucontrol
 shutter # image editor
 obs-studio
 localsend # send/get files to/from another devices
+discord
+whatsapp-for-linux
 
 # Postgresql
 postgresql
