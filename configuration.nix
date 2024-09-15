@@ -71,6 +71,11 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+environment.variables = {
+  EDITOR = "nvim";
+  # VISUAL = "nvim"; # Optionally set VISUAL as well
+};
+
   # Emacs Daemon
   services.emacs = {
     enable = true;
