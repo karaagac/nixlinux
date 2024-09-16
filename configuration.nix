@@ -190,6 +190,8 @@ stow
 translate-shell
 gnumake
 bc
+gcc # Gnu compiler for gcc etc.
+binutils # required for nvim and others
 
 # LaTeX
 texliveFull
@@ -231,6 +233,7 @@ obs-studio
 localsend # send/get files to/from another devices
 discord
 whatsapp-for-linux
+marktext # Markdown Editor
 
 # Postgresql
 postgresql
