@@ -192,6 +192,9 @@ gnumake
 bc
 gcc # Gnu compiler for gcc etc.
 binutils # required for nvim and others
+ffmpeg-full
+gst_all_1.gst-libav # required by ffmpeg for h.264 videos
+alsa-utils
 
 # LaTeX
 texliveFull
