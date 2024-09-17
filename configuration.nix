@@ -71,6 +71,9 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable flakes
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 environment.variables = {
   EDITOR = "nvim";
   # VISUAL = "nvim"; # Optionally set VISUAL as well
@@ -148,7 +151,14 @@ environment.variables = {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-            
+  # virtual box setup
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "xalil" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.draganddrop = true;
+  # ===================
+
   nixpkgs.config.permittedInsecurePackages = [
      "openssl-1.1.1w"
   ];
@@ -237,6 +247,7 @@ localsend # send/get files to/from another devices
 discord
 whatsapp-for-linux
 marktext # Markdown Editor
+anydesk # connect to other pcs
 
 # Postgresql
 postgresql
