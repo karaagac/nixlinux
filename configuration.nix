@@ -369,7 +369,6 @@ programs.zsh.shellAliases = {
   };
 
 
-
 #===============================================
 
   # GVFS - Enable usb drive to appear automatically in file manager
