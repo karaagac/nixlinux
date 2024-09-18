@@ -139,7 +139,7 @@ environment.variables = {
   users.users.xalil = {
     isNormalUser = true;
     description = "xalil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -205,6 +205,8 @@ binutils # required for nvim and others
 ffmpeg-full
 gst_all_1.gst-libav # required by ffmpeg for h.264 videos
 alsa-utils
+docker
+docker-compose
 
 # LaTeX
 texliveFull
@@ -214,7 +216,7 @@ texmaker
 vscode
 eclipses.eclipse-java
 jetbrains.idea-community
-jdk20
+jdk11
 maven
 
 # Browsers
@@ -248,6 +250,7 @@ discord
 whatsapp-for-linux
 marktext # Markdown Editor
 anydesk # connect to other pcs
+anki
 
 # Postgresql
 postgresql
@@ -358,6 +361,9 @@ programs.zsh.shellAliases = {
     pbpaste="xclip -selection clipboard -o";	# paste from clipboard, ctrl+v, ctrl+shift+v
     pbselect="xclip -selection primary -o";	# paste from highlight, middle click, shift+insert
 };
+
+# ======Docker ===============
+virtualisation.docker.enable = true;
 
 
 # ===============Espanso systemd config=========
