@@ -77,6 +77,7 @@ in
 environment.variables = {
   EDITOR = "nvim";
   # VISUAL = "nvim"; # Optionally set VISUAL as well
+  JAVA_HOME = "/run/current-system/sw/lib/openjdk";
 };
 
   # Emacs Daemon
@@ -207,6 +208,7 @@ gst_all_1.gst-libav # required by ffmpeg for h.264 videos
 alsa-utils
 docker
 docker-compose
+sdcv # dictionary for offline use
 
 # LaTeX
 texliveFull
@@ -347,14 +349,18 @@ programs.zsh.shellAliases = {
 
     # Config Files
     bookmarks="vim /home/xalil/dotfiles/surfraw/.config/surfraw/bookmarks";
+    resume = "mupdf ~/Documents/IbrahimKaraagacResume.pdf";
 
     # nix related
     nix-conf="sudo nvim /etc/nixos/configuration.nix";
     nix-switch ="sudo nixos-rebuild switch";
 
-    # Google Translate Online
+    # Dictionaries and Google Translate Online
     entr="trans en:tr"; #English to Turkish
     tren="trans tr:en"; #Turkish to English
+
+    sdcv="sdcv --data-dir ~/Documents/stardict-oald-2.4.2";
+
 
     # copy/paste for linux machines (Mac style)
     pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
