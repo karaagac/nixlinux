@@ -209,6 +209,7 @@ alsa-utils
 docker
 docker-compose
 sdcv # dictionary for offline use
+brightnessctl # brithness control: brightnessctl set +5%  OR brightnessctl set 5%-
 
 # LaTeX
 texliveFull
