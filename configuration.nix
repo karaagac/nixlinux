@@ -362,6 +362,22 @@ programs.zsh.shellAliases = {
 
     sdcv="sdcv --data-dir ~/Documents/stardict-oald-2.4.2";
 
+    #Udemy =====================================
+    udemy-main="google-chrome-stable 'https://www.udemy.com/home/my-courses/learning/'";
+    udemy-cucumber="google-chrome-stable  'https://www.udemy.com/course/cucumber-from-scratch/learn/lecture/19199846?start=795#overview'";
+    udemy-sql="google-chrome-stable 'https://www.udemy.com/course/oracle-sql-12c-become-an-sql-developer-with-subtitle/learn/lecture/34672622#overview'";
+    udemy-github="google-chrome-stable 'https://www.udemy.com/course/git-and-github-bootcamp/learn/lecture/24869800?start=242#overview'";
+    udemy-selenium="google-chrome-stable 'https://www.udemy.com/course/master-selenium-webdriver-with-java/learn/lecture/15448944?start=0#overview'";
+    udemy-testng="google-chrome-stable 'https://www.udemy.com/course/the-complete-testng-automation-framework-design-course/learn/lecture/19998732?start=192#overview'";
+    udemy-rest="google-chrome-stable 'https://www.udemy.com/course/learn-rest-api-automation-using-rest-assured/learn/lecture/24651094?start=9#overview'";
+    udemy-algabra="google-chrome-stable 'https://www.udemy.com/course/integralcalc-algebra/learn/lecture/1223528?start=2#overview'";
+    udemy-math="google-chrome-stable 'https://www.udemy.com/course/fundamentals-of-math/learn/lecture/16319778#overview'";
+    udemy-redhat="google-chrome-stable 'https://www.udemy.com/course/unofficial-linux-redhat-certified-system-administrator-rhcsa-8/learn/lecture/26928962?start=75#overview'";
+
+    udemy-rahul-cicd="google-chrome-stable 'https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/learn/lecture/42310428#overview'";
+
+    udemy-rahul-jdbc="google-chrome-stable 'https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/learn/lecture/3289318#overview'";
+    #===========================================
 
     # copy/paste for linux machines (Mac style)
     pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
