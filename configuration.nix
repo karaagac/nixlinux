@@ -153,11 +153,11 @@ environment.variables = {
   nixpkgs.config.allowUnfree = true;
 
   # virtual box setup
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "xalil" ];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.draganddrop = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "xalil" ];
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.guest.draganddrop = true;
   # ===================
 
   nixpkgs.config.permittedInsecurePackages = [
