@@ -377,7 +377,14 @@ programs.zsh.shellAliases = {
     udemy-rahul-cicd="google-chrome-stable 'https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/learn/lecture/42310428#overview'";
 
     udemy-rahul-jdbc="google-chrome-stable 'https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/learn/lecture/3289318#overview'";
-    #===========================================
+    #===============Java Projects in Eclipse============================
+    java-interview = "cd /home/xalil/eclipse-workspace/javainterview/src/main/java";
+    java-restassured="cd /home/xalil/eclipse-workspace/RestAssured_DizLearn/src/test";
+    java-testngDez="cd /home/xalil/eclipse-workspace/TestNG_Dez/src";
+    java-cucumber="cd /home/xalil/eclipse-workspace/CucumberBDD_dezlearn";
+    java-jdbc="cd /home/xalil/eclipse-workspace/RenastechJDBCC/src/main/java/renastech/jdbc";
+    java-selenium="cd /home/xalil/eclipse-workspace/Selenium_Automation/src/test/java";
+    java-general="cd /home/xalil/eclipse-workspace/GeneralStudy/src/main/java";
 
     # copy/paste for linux machines (Mac style)
     pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
