@@ -105,18 +105,36 @@ environment.variables = {
   #services.displayManager.sddm.enable = true;
   #services.desktopManager.plasma6.enable = true;
 
-  # XFCE
+  # XFCE =========================================
   services.xserver.desktopManager.xfce.enable  = true;
   services.displayManager.defaultSession  = "xfce";
+
+  #================================================
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  #=========Printer==============================
 
+  # Enable CUPS for printing
+  services.printing.enable = true;
+  services.printing.browsing = true;
+  services.printing.browsedConf = ''
+  BrowseDNSSDSubTypes _cups,_print
+  BrowseLocalProtocols all
+  BrowseRemoteProtocols all
+  CreateIPPPrinterQueues All
+
+  BrowseProtocols all
+  '';
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
+
+  #===============================================
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -140,7 +158,7 @@ environment.variables = {
   users.users.xalil = {
     isNormalUser = true;
     description = "xalil";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "lp" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -210,6 +228,11 @@ docker
 docker-compose
 sdcv # dictionary for offline use
 brightnessctl # brithness control: brightnessctl set +5%  OR brightnessctl set 5%-
+xbindkeys # bind keyboard shortcuts to commands. requires ~/.xbindkeys which is in dotfiles
+shotcut # video editor
+pandoc # document conversion
+cups # printing package
+brlaser # brother printer
 
 # LaTeX
 texliveFull
@@ -220,6 +243,7 @@ vscode
 eclipses.eclipse-java
 jetbrains.idea-community
 jdk11
+jdt-language-server # java language server
 maven
 
 # Browsers
@@ -250,10 +274,12 @@ shutter # image editor
 obs-studio
 localsend # send/get files to/from another devices
 discord
-whatsapp-for-linux
 marktext # Markdown Editor
-anydesk # connect to other pcs
 anki
+goldendict-ng # Dictionary app
+syncthing 
+feh
+vlc
 
 # Postgresql
 postgresql
@@ -378,13 +404,25 @@ programs.zsh.shellAliases = {
 
     udemy-rahul-jdbc="google-chrome-stable 'https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/learn/lecture/3289318#overview'";
     #===============Java Projects in Eclipse============================
-    java-interview = "cd /home/xalil/eclipse-workspace/javainterview/src/main/java";
-    java-restassured="cd /home/xalil/eclipse-workspace/RestAssured_DizLearn/src/test";
-    java-testngDez="cd /home/xalil/eclipse-workspace/TestNG_Dez/src";
-    java-cucumber="cd /home/xalil/eclipse-workspace/CucumberBDD_dezlearn";
-    java-jdbc="cd /home/xalil/eclipse-workspace/RenastechJDBCC/src/main/java/renastech/jdbc";
-    java-selenium="cd /home/xalil/eclipse-workspace/Selenium_Automation/src/test/java";
-    java-general="cd /home/xalil/eclipse-workspace/GeneralStudy/src/main/java";
+    cd-interview = "cd /home/xalil/eclipse-workspace/javainterview/src/main/java";
+    cd-restassured="cd /home/xalil/eclipse-workspace/RestAssured_DizLearn/src/test";
+    cd-testngDez="cd /home/xalil/eclipse-workspace/TestNG_Dez/src";
+    cd-cucumber="cd /home/xalil/eclipse-workspace/CucumberBDD_dezlearn";
+    cd-jdbc="cd /home/xalil/eclipse-workspace/RenastechJDBCC/src/main/java/renastech/jdbc";
+    cd-selenium="cd /home/xalil/eclipse-workspace/Selenium_Automation/src/test/java";
+    cd-general="cd /home/xalil/eclipse-workspace/GeneralStudy/src/main/java";
+
+    #================idea =================================================
+    idea-collection = "idea-community '/home/xalil/eclipse-workspace/CollectionsAPI/'";
+    idea-cucumber = "idea-community '/home/xalil/eclipse-workspace/CucumberBDD_dezlearn/'";
+    idea-functional= "idea-community '/home/xalil/eclipse-workspace/Functional/'";
+    idea-general = "idea-community '/home/xalil/eclipse-workspace/GeneralStudy/'";
+    idea-javainterview = "idea-community '/home/xalil/eclipse-workspace/javainterview/'";
+    idea-jdbc = "idea-community '/home/xalil/eclipse-workspace/RenastechJDBCC/'";
+    idea-rest = "idea-community '/home/xalil/eclipse-workspace/RestAssured_DizLearn/'";
+    idea-selenium= "idea-community '/home/xalil/eclipse-workspace/Selenium_Automation/'";
+    idea-SeleniumTestNG07 = "idea-community '/home/xalil/eclipse-workspace/SeleniumTestNG07/'";
+    idea-Streams = "idea-community '/home/xalil/eclipse-workspace/Streams/'";
 
     # copy/paste for linux machines (Mac style)
     pbcopy="xclip -selection clipboard";	# copy to clipboard, ctrl+c, ctrl+shift+c
@@ -414,6 +452,16 @@ virtualisation.docker.enable = true;
 
     wantedBy = [ "default.target" ];
   };
+
+#===========syncthing=========================
+services = {
+    syncthing = {
+        enable = true;
+        user = "xalil";
+        dataDir = "/home/xalil/Documents/SyncthingShare";    # Default folder for new synced folders
+        configDir = "/home/xalil/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+};
 
 
 #===============================================
