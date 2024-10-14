@@ -96,21 +96,24 @@ environment.variables = {
     '';
   };
 
-  # Default GUI Desktop Manager: xfce, gnome 
-   services.displayManager.defaultSession  = "xfce";
+  # Window Managers =====================
 
-  # Enable the GNOME Desktop Environment.
+  # GNOME
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
-
+  #services.displayManager.defaultSession  = "gnome";
+  #================================================
   # KDE
   #services.displayManager.sddm.enable = true;
   #services.desktopManager.plasma6.enable = true;
+  #services.displayManager.defaultSession  = "plasma";
 
   # XFCE =========================================
   services.xserver.desktopManager.xfce.enable  = true;
-
+  services.displayManager.defaultSession  = "xfce";
   #================================================
+
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -233,7 +236,6 @@ xbindkeys # bind keyboard shortcuts to commands. requires ~/.xbindkeys which is 
 shotcut # video editor
 pandoc # document conversion
 cups # printing package
-brlaser # brother printer
 
 # LaTeX
 texliveFull
@@ -263,7 +265,6 @@ postman
 bitwarden-desktop
 espanso
 zoom-us
-github-desktop
 libreoffice-qt6-still
 freetube
 emacs
