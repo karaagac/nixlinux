@@ -80,6 +80,13 @@ environment.variables = {
   JAVA_HOME = "/run/current-system/sw/lib/openjdk";
 };
 
+
+  # Update PATH to include JAVA_HOME
+  environment.extraInit = ''
+    export PATH="$JAVA_HOME/bin:$PATH"
+  '';
+
+
   # Emacs Daemon
   services.emacs = {
     enable = true;
