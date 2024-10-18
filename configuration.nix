@@ -71,6 +71,7 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+
   # Enable flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -105,21 +106,28 @@ environment.variables = {
 
   # Window Managers =====================
 
-  # GNOME
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-  #services.displayManager.defaultSession  = "gnome";
-  #================================================
-  # KDE
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-  #services.displayManager.defaultSession  = "plasma";
-
   # XFCE =========================================
   services.xserver.desktopManager.xfce.enable  = true;
   services.displayManager.defaultSession  = "xfce";
-  #================================================
+  #DWM ================================================
+  services.xserver.windowManager.dwm.enable = true;
 
+# dwm custom config
+services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
+  src = /home/xalil/suckless/dwm;
+};
+
+  # Disable nvidia at boot======================
+  boot = {
+    extraModprobeConfig = ''
+      blacklist nouveau
+      options nouveau modeset=0
+    '';
+    blacklistedKernelModules =
+      [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
+  };
+
+   #==============================================
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -210,7 +218,6 @@ blueman
 # Terminal Apps
 oh-my-zsh
 zsh-powerlevel10k
-alacritty
 vim
 neovim
 fzf
@@ -244,6 +251,9 @@ shotcut # video editor
 pandoc # document conversion
 cups # printing package
 
+upower #battary check
+acpi # battary check
+
 # LaTeX
 texliveFull
 texmaker
@@ -269,7 +279,6 @@ sioyek
 mpv
 mupdf
 postman
-bitwarden-desktop
 espanso
 zoom-us
 libreoffice-qt6-still
@@ -281,9 +290,7 @@ obsidian
 pavucontrol
 shutter # image editor
 obs-studio
-localsend # send/get files to/from another devices
 discord
-marktext # Markdown Editor
 anki
 goldendict-ng # Dictionary app
 syncthing 
@@ -294,12 +301,12 @@ libjpeg
 libtiff
 
 # Postgresql
-postgresql
-dbeaver-bin
-mysql-workbench
+#postgresql
+#dbeaver-bin
+#mysql-workbench
 
 # XFCE Related==============
-leafpad
+#leafpad
 xarchiver
 
 ## XFCE Themes
@@ -314,19 +321,24 @@ xfce.thunar-archive-plugin
 xfce.xfce4-whiskermenu-plugin
 xfce.xfce4-volumed-pulse
 xfce.xfce4-pulseaudio-plugin
-# ============================
+# DWM ============================
+dmenu
+st
+alacritty
 
 # Kde
-kdePackages.ark #File archiver
+#kdePackages.ark #File archiver
 
 # Gnome
-gnome.file-roller #Gnome Archive Manager
+#gnome.file-roller #Gnome Archive Manager
 gnome.gnome-disk-utility
 
 # Android
 android-file-transfer
 
 ];
+
+
 
 # Fonts
 fonts.packages = with pkgs; [
@@ -335,16 +347,6 @@ noto-fonts
 nerdfonts
 jetbrains-mono
 ];
-
-#==========Default Apps===========
-xdg.mime.defaultApplications = {
-    "application/pdf" = "okular.desktop";
-    "video/mpeg" = "mpv.desktop";    # For .mpg and .mpeg files
-    "video/mp4" = "mpv.desktop";     # For .mp4 files
-    "video/x-matroska" = "mpv.desktop"; # For .mkv files
-    "audio/mpeg" = "mpv.desktop";    # For .mp3 files
-    "video/quicktime" = "mpv.desktop"; # For .mov files
-};
 
 
 #=================================
