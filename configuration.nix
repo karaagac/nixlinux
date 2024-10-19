@@ -112,22 +112,14 @@ environment.variables = {
   #DWM ================================================
   services.xserver.windowManager.dwm.enable = true;
 
-# dwm custom config
-services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-  src = /home/xalil/suckless/dwm;
-};
-
-  # Disable nvidia at boot======================
-  boot = {
-    extraModprobeConfig = ''
-      blacklist nouveau
-      options nouveau modeset=0
-    '';
-    blacklistedKernelModules =
-      [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
+  # dwm custom config
+  services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
+    src = /home/xalil/suckless/dwm;
   };
+  # i3 window manager==================================
+  services.xserver.windowManager.i3.enable = true;
 
-   #==============================================
+  #===================================================
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -254,17 +246,21 @@ cups # printing package
 upower #battary check
 acpi # battary check
 
+xorg.xev # find keyboard keys code
+xbindkeys
+
 # LaTeX
 texliveFull
 texmaker
 
-# IDE
+# IDE and Programming Languages
 vscode
 eclipses.eclipse-java
 jetbrains.idea-community
 jdk11
 jdt-language-server # java language server
 maven
+python3
 
 # Browsers
 brave
@@ -293,7 +289,7 @@ obs-studio
 discord
 anki
 goldendict-ng # Dictionary app
-syncthing 
+#syncthing 
 feh
 vlc
 libpng
@@ -325,6 +321,11 @@ xfce.xfce4-pulseaudio-plugin
 dmenu
 st
 alacritty
+
+# i3 Window Manager
+i3
+i3status
+xterm
 
 # Kde
 #kdePackages.ark #File archiver
@@ -391,6 +392,9 @@ programs.zsh.shellAliases = {
     # Config Files
     bookmarks="vim /home/xalil/dotfiles/surfraw/.config/surfraw/bookmarks";
     resume = "mupdf ~/Documents/IbrahimKaraagacResume.pdf";
+
+    # Other Files
+    sqlfile = "nvim /home/xalil/Documents/ibrahim.sql";
 
     # nix related
     nix-conf="sudo nvim /etc/nixos/configuration.nix";
@@ -468,14 +472,14 @@ virtualisation.docker.enable = true;
   };
 
 #===========syncthing=========================
-services = {
-    syncthing = {
-        enable = true;
-        user = "xalil";
-        dataDir = "/home/xalil/Documents/SyncthingShare";    # Default folder for new synced folders
-        configDir = "/home/xalil/.config/syncthing";   # Folder for Syncthing's settings and keys
-    };
-};
+#services = {
+#    syncthing = {
+#        enable = true;
+#        user = "xalil";
+#        dataDir = "/home/xalil/Documents/SyncthingShare";    # Default folder for new synced folders
+#        configDir = "/home/xalil/.config/syncthing";   # Folder for Syncthing's settings and keys
+#    };
+#};
 
 
 #===============================================
