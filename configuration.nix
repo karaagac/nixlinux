@@ -242,7 +242,7 @@ xbindkeys # bind keyboard shortcuts to commands. requires ~/.xbindkeys which is 
 shotcut # video editor
 pandoc # document conversion
 cups # printing package
-
+coreutils-full
 upower #battary check
 acpi # battary check
 
@@ -256,6 +256,8 @@ texmaker
 # IDE and Programming Languages
 vscode
 eclipses.eclipse-java
+
+
 jetbrains.idea-community
 jdk11
 jdt-language-server # java language server
@@ -321,6 +323,8 @@ xfce.xfce4-pulseaudio-plugin
 dmenu
 st
 alacritty
+slstatus
+
 
 # i3 Window Manager
 i3
@@ -333,6 +337,7 @@ xterm
 # Gnome
 #gnome.file-roller #Gnome Archive Manager
 gnome.gnome-disk-utility
+
 
 # Android
 android-file-transfer
@@ -347,6 +352,7 @@ dejavu_fonts
 noto-fonts
 nerdfonts
 jetbrains-mono
+font-awesome
 ];
 
 
@@ -394,7 +400,7 @@ programs.zsh.shellAliases = {
     resume = "mupdf ~/Documents/IbrahimKaraagacResume.pdf";
 
     # Other Files
-    sqlfile = "nvim /home/xalil/Documents/ibrahim.sql";
+    sqlfile = "nvim /home/xalil/dotfiles/sql/ibrahim.sql";
 
     # nix related
     nix-conf="sudo nvim /etc/nixos/configuration.nix";
@@ -407,7 +413,7 @@ programs.zsh.shellAliases = {
     sdcv="sdcv --data-dir ~/Documents/stardict-oald-2.4.2";
 
     #Udemy =====================================
-    udemy-main="google-chrome-stable 'https://www.udemy.com/home/my-courses/learning/'";
+    udemy-main="google-chrome-stable 'https://www.udemy.com/home/my-courses/learning'";
     udemy-cucumber="google-chrome-stable  'https://www.udemy.com/course/cucumber-from-scratch/learn/lecture/19199846?start=795#overview'";
     udemy-sql="google-chrome-stable 'https://www.udemy.com/course/oracle-sql-12c-become-an-sql-developer-with-subtitle/learn/lecture/34672622#overview'";
     udemy-github="google-chrome-stable 'https://www.udemy.com/course/git-and-github-bootcamp/learn/lecture/24869800?start=242#overview'";
