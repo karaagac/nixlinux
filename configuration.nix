@@ -412,6 +412,9 @@ programs.zsh.shellAliases = {
 
     sdcv="sdcv --data-dir ~/Documents/stardict-oald-2.4.2";
 
+    #Apps
+    sqldeveloper="/home/xalil/Apps/sqldeveloper/sqldeveloper/bin/sqldeveloper &";
+
     #Udemy =====================================
     udemy-main="google-chrome-stable 'https://www.udemy.com/home/my-courses/learning'";
     udemy-cucumber="google-chrome-stable  'https://www.udemy.com/course/cucumber-from-scratch/learn/lecture/19199846?start=795#overview'";
@@ -436,6 +439,14 @@ programs.zsh.shellAliases = {
     cd-selenium="cd /home/xalil/eclipse-workspace/Selenium_Automation/src/test/java";
     cd-general="cd /home/xalil/eclipse-workspace/GeneralStudy/src/main/java";
 
+    # nvim open these 
+    n-interview="nvim /home/xalil/eclipse-workspace/javainterview/src/main/java";
+    n-restassured="nvim /home/xalil/eclipse-workspace/RestAssured_DizLearn/src/test";
+    n-testngDez="nvim /home/xalil/eclipse-workspace/TestNG_Dez/src";
+    n-cucumber="nvim /home/xalil/eclipse-workspace/CucumberBDD_dezlearn";
+    n-jdbc="nvim /home/xalil/eclipse-workspace/RenastechJDBCC/src/main/java/renastech/jdbc";
+    n-selenium="nvim /home/xalil/eclipse-workspace/Selenium_Automation/src/test/java";
+    n-general="nvim /home/xalil/eclipse-workspace/GeneralStudy/src/main/java";
     #================idea =================================================
     idea-collection = "idea-community '/home/xalil/eclipse-workspace/CollectionsAPI/'";
     idea-cucumber = "idea-community '/home/xalil/eclipse-workspace/CucumberBDD_dezlearn/'";
