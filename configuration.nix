@@ -245,6 +245,7 @@ cups # printing package
 coreutils-full
 upower #battary check
 acpi # battary check
+xorg.xrdb # for xterm
 
 xorg.xev # find keyboard keys code
 xbindkeys
@@ -306,6 +307,7 @@ libtiff
 # XFCE Related==============
 #leafpad
 xarchiver
+galculator 
 
 ## XFCE Themes
 plata-theme
@@ -361,7 +363,15 @@ font-awesome
 # non nix binary
 programs.nix-ld.enable = true;
 
-# for global user ZSH
+# Github config =================
+environment.etc."gitconfig".text = ''
+	[user]
+	userName = "karaagac"
+	userEmail = "ikaraagac@gmail.com"
+'';
+
+
+# for global user ZSH===========
 users.defaultUserShell=pkgs.zsh; 
 
 # enable zsh and oh my zsh
@@ -414,6 +424,7 @@ programs.zsh.shellAliases = {
 
     #Apps
     sqldeveloper="/home/xalil/Apps/sqldeveloper/sqldeveloper/bin/sqldeveloper &";
+    xterm = "xterm -fa 'Monospace' -fs 18";
 
     #Udemy =====================================
     udemy-main="google-chrome-stable 'https://www.udemy.com/home/my-courses/learning'";
