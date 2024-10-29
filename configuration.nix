@@ -82,9 +82,9 @@ environment.variables = {
 };
 
 
-  # Update PATH to include JAVA_HOME
+  # Update PATH to include JAVA_HOME and other directories
   environment.extraInit = ''
-    export PATH="$JAVA_HOME/bin:$PATH"
+    export PATH="$JAVA_HOME/bin:/home/xalil/dotfiles/scripts:$PATH"
   '';
 
 
@@ -246,6 +246,9 @@ coreutils-full
 upower #battary check
 acpi # battary check
 xorg.xrdb # for xterm
+sxhkd
+tdrop # dropdown terminal
+pulseaudioFull # sound server, compatable with pipewire
 
 xorg.xev # find keyboard keys code
 xbindkeys
@@ -298,6 +301,7 @@ vlc
 libpng
 libjpeg
 libtiff
+arandr
 
 # Postgresql
 #postgresql
@@ -332,6 +336,8 @@ slstatus
 i3
 i3status
 xterm
+picom
+termite
 
 # Kde
 #kdePackages.ark #File archiver
@@ -355,6 +361,7 @@ noto-fonts
 nerdfonts
 jetbrains-mono
 font-awesome
+source-sans-pro
 ];
 
 
