@@ -249,6 +249,7 @@ xorg.xrdb # for xterm
 sxhkd
 tdrop # dropdown terminal
 pulseaudioFull # sound server, compatable with pipewire
+rofi
 
 xorg.xev # find keyboard keys code
 xbindkeys
@@ -399,6 +400,44 @@ programs.zsh = {
     };
 };
 
+# zsh functions
+programs.zsh.interactiveShellInit = ''
+  svid() {
+    local file
+    file=$(find ~/Videos -type f -print0 | fzf --read0)
+    if [[ -n "$file" ]]; then
+      mpv "$file"
+    fi
+  }
+
+  sn() {
+    local file
+    file=$(find ~/Documents/notlar -type f -print0 | fzf --read0)
+    if [[ -n "$file" ]]; then
+      nvim "$file"
+    fi
+  }
+
+  ns() {
+    local file
+    file=$(find ~/Documents/notlar -type f -print0 | fzf --read0)
+    if [[ -n "$file" ]]; then
+      nvim "$file"
+    fi
+  }
+
+
+  sokular() {
+    local file
+    file=$(find ~/Documents/notlar -type f -print0 | fzf --read0)
+    if [[ -n "$file" ]]; then
+      okular "$file"
+    fi
+  }
+'';
+
+
+
 # source powerlevel10k
 programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
@@ -409,6 +448,7 @@ programs.zsh.shellAliases = {
     p="cd ~/Pictures/";
     dn="cd ~/Downloads/";
     doc="cd ~/Documents/";
+    v="cd ~/Videos/";
     notlar="cd ~/Documents/notlar";
     dot="cd /home/xalil/dotfiles";
 
